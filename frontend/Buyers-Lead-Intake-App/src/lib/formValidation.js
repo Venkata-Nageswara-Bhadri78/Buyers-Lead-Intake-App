@@ -46,23 +46,3 @@ const checkValidation = (formData) => {
     }
 }
 export default checkValidation;
-/*
-const [formData, setFormData] = useState({
-    id: JSON.parse(localStorage.getItem("user")).uuid,
-    fullName : '',
-    email : '',
-    phone : '',
-    city: '',
-    propertyType: '',
-    bhk: '',
-    purpose: '',
-    minBudget: '',
-    maxBudget: '',
-    timeline: '',
-    source: '',
-    status: 'New',
-    notes: '',
-    tags: '',
-    updatedAt: new Date().toISOString()
-})
-*/
