@@ -29,6 +29,7 @@ const { rejects } = require('assert');
 const saltRounds = 10;
 
 // ----------------------------------------- CREATING TABLES ------------------------
+
 const create_credentials_table = `CREATE TABLE IF NOT EXISTS USER_CREDENTIALS (
         uuid TEXT PRIMARY KEY,
         fullname TEXT NOT NULL,
@@ -322,6 +323,37 @@ db.run(history_table, [], (err) => {
 // ---------------------- PORT LISTENING ---------------
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
+})
+
+// ------------------------ FILE DATA UPLOAD -----------------
+app.post('/file-data-upload', (req, res) => {
+    const data = req.body;
+
+    query = `INSERT INTO BUYERS (id, fullName, email, phone, city,
+        propertyType, bhk, purpose, budgetMin, budgetMax, timeline,
+        source, status, notes, tags, ownerId, updatedAt
+    ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+     
+    let errors = [];
+    data.forEach(item => {
+        const id = uuidv4();
+        const tags = Array.isArray(item.tags)
+        ? item.tags.join(",")
+        : (item.tags || "");
+
+        db.run(query, [id, item.fullName, item.email, item.phone, item.city,
+            item.propertyType, item.bhk, item.purpose, item.minBudget, item.maxBudget, item.timeline,
+            item.source, item.status, item.notes, tags, item.ownerId, item.updatedAt, 
+        ], (err) => {
+            if(err){
+                errors.push(err.message);
+            }
+        })
+    });
+    if(errors.length > 0){
+        return res.status(500).send({ success: false, message: `Errors in few rows`, errors })
+    }
+    res.status(200).send({success: true, message: "ALL CSV DATA UPLOADED SUCESSFULLY"})
 })
 
 // ------------------------ EXAMPLE DATA INSERTION -----------------
