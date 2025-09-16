@@ -22,7 +22,7 @@ A small app to **capture, list, and manage buyer leads** with validation, search
 ## Tech Stack
 
 - **Frontend:** React.js, React, JavaScript
-- **Backend / DB:** SQLite
+- **Backend / DB:** express.js, node.js, SQLite
 - **Validation:** Zod
 - **Auth:** Magic link or demo login
 - **Version Control:** Git with meaningful commits
@@ -100,3 +100,34 @@ http://localhost:4000
 ```
 
 6. **Go with the project exploration**
+
+- Click on the link that will send you to browser and explore the project by signing up and login.
+
+## What’s Done & What’s Missed
+
+| Feature / Task | Status |
+|----------------|--------|
+| Login for user | ✅ |
+| Login for admin | ✅ |
+| Dashboard table view | ✅ |
+| Column sorting | ✅ |
+| Ownership & role-based edit | ✅ |
+| Edit history tracking | ✅ |
+| CSV import with row-level validation | ✅ |
+| CSV export | ✅ |
+| Debounced search (name, email, phone) | ❌ |
+| Pagination (server-side, 10 rows per page) | ✅ |
+| Client-side Zod validation | ✅ |
+| Server-side Zod validation | ✅ |
+| Concurrency check on edit (updatedAt) | ❌ |
+| Error boundary | ✅ |
+| Unit test for validator | ❌ |
+| Accessibility basics | ❌ |
+
+## Final Note
+
+Thank you for the opportunity to work on this project. I have completed a significant portion and will continue to update the repository with the remaining tasks.  
+
+I appreciate your time and consideration.  
+
+Thank you!
