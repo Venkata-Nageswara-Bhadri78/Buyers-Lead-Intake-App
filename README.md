@@ -1,18 +1,18 @@
 # Mini Buyer Lead Intake App
 
-A small app to **capture, list, and manage buyer leads** with validation, search/filter, and CSV import/export. Built as an internship assignment to showcase full-stack development using React.js, JavaScript, Zod and a relational database.
+A small app to **capture, list, and manage buyer leads** with validation, search/filter, and CSV import/export. Built as an internship assignment to showcase full-stack development using React.js, JavaScript, express.js, node.js, bcrypt (for password hashing), Zod and a relational database(sqlite3).
 
 ---
 
 ## Features
 
-- **Authentication:** Login for user and admin
+- **Authentication:** Login for user and admin (Initial landing page)
 - **Dashboard:** Table view of buyers with sortable columns
 - **Ownership & Roles:**
   - Users can edit only their own leads
   - Admin can edit all leads
 - **Edit History:** Changes tracked in `buyer_history` table
-- **CSV Import/Export:** Upload CSV files (max 200 rows) with row-level validation and error display
+- **CSV Import/Export:** Upload CSV files directly into DB (max 200 rows) with row-level validation and error display
 - **Filters & Search:** Debounced search by name, email, phone; filters by city, property type, status, and timeline (need to complete)
 - **Validation:** Zod validation both client and server-side
 - **Pagination:** Server-side pagination with 10 rows per page
@@ -21,11 +21,13 @@ A small app to **capture, list, and manage buyer leads** with validation, search
 
 ## Tech Stack
 
-- **Frontend:** React.js, React, JavaScript
+- **Frontend:** React.js, JavaScript (vite)
 - **Backend / DB:** express.js, node.js, SQLite
 - **Validation:** Zod
 - **Auth:** Magic link or demo login
+- **Material UI:** Custom React components built with Material UI
 - **Version Control:** Git with meaningful commits
+
 
 ---
 
@@ -77,24 +79,19 @@ git clone https://github.com/Venkata-Nageswara-Bhadri78/Buyers-Lead-Intake-App.g
 cd Buyers-Lead-Intake-App.git
 ```
 
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Setup Frontend** (move to backend folder and run)
+2. **Frontend Setup** (move to `frontend/Buyers-Lead-Intake-App` folder and run below commands)
 ```bash
 npm install
 npm run dev
 ```
 
-4. **backend Setup** (move to frontend/Buyers-Lead-Intake-App folder and run)
+4. **Backend Setup** (move to `backend` folder and run below commands)
 ```bash
 npm install
 node server.js
 ```
 
-5. **The frontend will give the live link**
+5. **The frontend will give the local link**
 ```bash
 http://localhost:4000
 ```
@@ -119,14 +116,15 @@ http://localhost:4000
 | Pagination (server-side, 10 rows per page) | ✅ |
 | Client-side Zod validation | ✅ |
 | Server-side Zod validation | ✅ |
-| Concurrency check on edit (updatedAt) | ❌ |
 | Error boundary | ✅ |
 | Unit test for validator | ❌ |
 | Accessibility basics | ❌ |
 
 ## Final Note
 
-Thank you for the opportunity to work on this project. I have completed a significant portion and will continue to update the repository with the remaining tasks.  
+Thank you for the opportunity to work on this project. I have completed a significant portion and will continue to update the repository with the remaining tasks. 
+ 
+Will upload the deployment link after sucessfull deployment
 
 I appreciate your time and consideration.  
 
