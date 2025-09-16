@@ -46,26 +46,26 @@ const TableBody = ({filteredData, userInfo}) => {
         {(filteredData || []).map(row => {
         return (
             <tr key={row.id}>
-            <td className={rowStyling}>{row.fullName}</td>
-            <td className={rowStyling}>{row.email}</td>
-            <td className={rowStyling}>{row.phone}</td>
-            <td className={rowStyling}>{row.city}</td>
-            <td className={rowStyling}>{row.propertyType}</td>
-            
-            <td className={rowStyling}>{row.bhk}</td>
-            <td className={rowStyling}>{row.purpose}</td>
-            <td className={rowStyling}>{row.budgetMin}</td>
-            <td className={rowStyling}>{row.budgetMax}</td>
-            <td className={rowStyling}>{row.timeline}</td>
-            <td className={rowStyling}>{row.source}</td>
-            <td className={rowStyling}>{row.status}</td>
-            <td className={rowStyling}>{row.notes}</td>
-            <td className={rowStyling}>{row.tags}</td>
-            <td className={rowStyling}>{row.ownerId}</td>
-            <td className={rowStyling}>{row.updatedAt}</td>
-            <td className={`border p-3`}>{displayEditButton(row.ownerId) && 
-              <Link to='/new' state={{updateData: row}}><MdEdit size={20}/></Link>  
-            }</td>
+              <td className={rowStyling}>{row.fullName}</td>
+              <td className={rowStyling}>{row.email}</td>
+              <td className={rowStyling}>{row.phone}</td>
+              <td className={rowStyling}>{row.city}</td>
+              <td className={rowStyling}>{row.propertyType}</td>
+              
+              <td className={rowStyling}>{row.bhk}</td>
+              <td className={rowStyling}>{row.purpose}</td>
+              <td className={rowStyling}>{row.budgetMin}</td>
+              <td className={rowStyling}>{row.budgetMax}</td>
+              <td className={rowStyling}>{row.timeline}</td>
+              <td className={rowStyling}>{row.source}</td>
+              <td className={rowStyling}>{row.status}</td>
+              <td className={rowStyling}>{row.notes}</td>
+              <td className={rowStyling}>{row.tags}</td>
+              <td className={rowStyling}>{row.ownerId}</td>
+              <td className={rowStyling}>{row.updatedAt}</td>
+              <td className={`border p-3`}>{displayEditButton(row.ownerId) && 
+                <Link to='/new' state={{updateData: row}}><MdEdit size={20}/></Link>  
+              }</td>
             </tr>
         )
         })}
